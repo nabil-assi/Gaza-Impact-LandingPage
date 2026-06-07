@@ -1,0 +1,104 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800&display=swap");
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --font-sans: "Inter", "Tajawal", system-ui, sans-serif;
+  --font-arabic: "Tajawal", "Inter", system-ui, sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-soft: var(--primary-soft);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sage: var(--sage);
+  --color-moss: var(--moss);
+  --color-cream: var(--cream);
+}
+
+:root {
+  --radius: 0.75rem;
+
+  /* Calming sage/moss palette */
+  --background: oklch(0.995 0.003 110);          /* near-white cream */
+  --foreground: oklch(0.24 0.02 150);            /* deep moss text */
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.24 0.02 150);
+
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.24 0.02 150);
+
+  --primary: oklch(0.52 0.09 150);               /* moss green */
+  --primary-foreground: oklch(0.99 0.005 110);
+  --primary-soft: oklch(0.93 0.04 150);          /* sage tint */
+
+  --secondary: oklch(0.96 0.015 130);
+  --secondary-foreground: oklch(0.30 0.04 150);
+
+  --muted: oklch(0.965 0.008 120);
+  --muted-foreground: oklch(0.50 0.02 150);
+
+  --accent: oklch(0.88 0.06 140);                /* light sage accent */
+  --accent-foreground: oklch(0.28 0.05 150);
+
+  --destructive: oklch(0.58 0.20 27);
+  --destructive-foreground: oklch(0.99 0 0);
+
+  --border: oklch(0.92 0.012 140);
+  --input: oklch(0.92 0.012 140);
+  --ring: oklch(0.52 0.09 150);
+
+  --sage: oklch(0.78 0.07 145);
+  --moss: oklch(0.42 0.08 150);
+  --cream: oklch(0.98 0.012 90);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  [dir="rtl"], .font-arabic {
+    font-family: var(--font-arabic);
+  }
+
+  h1, h2, h3, h4 {
+    letter-spacing: -0.02em;
+  }
+}
